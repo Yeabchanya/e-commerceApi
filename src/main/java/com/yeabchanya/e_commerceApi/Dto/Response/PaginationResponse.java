@@ -7,14 +7,16 @@ import org.springframework.data.domain.Page;
 import java.util.List;
 
 @Data
-public class PageResponse {
+public class PaginationResponse<B> {
 
     private List<?> list;
-    private PaginationRequest pagination;
+    private PaginationRequest paginationRequest;
 
-    public PageResponse(Page<?> page) {
+    public PaginationResponse(Page<?> page) {
+
         this.list = page.getContent();
-        this.pagination = PaginationRequest.builder()
+
+        this.paginationRequest = PaginationRequest.builder()
                 .empty(page.isEmpty())
                 .first(page.isFirst())
                 .last(page.isLast())

@@ -3,6 +3,7 @@ package com.yeabchanya.e_commerceApi.model;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Data
@@ -17,6 +18,16 @@ public class Brand {
     private String name;
 
     private String description;
+
+    private Boolean active = true;   // instead of hard delete, mark inactive
+
+    private Boolean deleted = false; // soft delete flag
+
+    private LocalDateTime createdAt;
+    private LocalDateTime updatedAt;
+    private LocalDateTime deletedAt;
+
+    private String deletedBy; // optional for audit (who deleted)
 
     @OneToMany(mappedBy = "brand")
     private List<Product> products;
