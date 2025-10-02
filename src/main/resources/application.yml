@@ -9,7 +9,3 @@ spring:
         dialect: org.hibernate.dialect.PostgreSQLDialect
     hibernate:
       ddl-auto: update
-logging:
-  level:
-    root: INFO
-    com.yourpackage: DEBUG

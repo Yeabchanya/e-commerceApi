@@ -29,6 +29,8 @@ public class Brand {
 
     private String deletedBy; // optional for audit (who deleted)
 
+    private String logoUrl; // store logo file path or URL
+
     @OneToMany(mappedBy = "brand")
     private List<Product> products;
 

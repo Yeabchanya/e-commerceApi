@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 
 @Entity
 @Data
@@ -19,6 +20,19 @@ public class Product {
     private String description;
     private BigDecimal price;
     private Integer stock;
+
+    private Boolean active = true;   // instead of hard delete, mark inactive
+
+    private Boolean deleted = false; // soft delete flag
+
+    private LocalDateTime createdAt;
+    private LocalDateTime updatedAt;
+    private LocalDateTime deletedAt;
+
+    private String deletedBy; // optional for audit (who deleted)
+    
+
+    // ---------------- Relationships ----------------
 
     @ManyToOne
     @JoinColumn(name = "brand_id", nullable = false)

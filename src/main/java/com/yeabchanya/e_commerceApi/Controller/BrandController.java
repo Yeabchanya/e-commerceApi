@@ -12,7 +12,9 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -20,7 +22,7 @@ import java.util.stream.Collectors;
 @Slf4j
 @RequiredArgsConstructor
 @RestController
-@RequestMapping("/api/brands") 
+@RequestMapping("/api/brands")
 public class BrandController {
 
     private final BrandService brandService;
@@ -87,26 +89,57 @@ public class BrandController {
     }
 
     @DeleteMapping("/softDelete/{id}")
-    public ResponseEntity<?> softDeleteBrand(@PathVariable("id") Long id, @RequestParam String deletedBy) {
-        brandService.softDeleteBrand(id,deletedBy);
+    public ResponseEntity<?> softDeleteBrand(@PathVariable("id") Long id,
+                                             @RequestParam String deletedBy) {
+
+        brandService.softDeleteBrand(id, deletedBy);
+
         return ResponseEntity.ok("Delete Successful");
     }
 
     @PutMapping("/restore/{id}")
-    public ResponseEntity<?> restoreBrand(@PathVariable("id") Long id){
+    public ResponseEntity<?> restoreBrand(@PathVariable("id") Long id) {
         brandService.restoreBrand(id);
         return ResponseEntity.ok("Restore Successful");
     }
 
+    @PatchMapping("/{id}/status")
+    public ResponseEntity<?> toggleBrandStatus(@PathVariable Long id,
+                                               @RequestParam boolean active) {
+
+        brandService.toggleBrandStatus(id, active);
+
+        return ResponseEntity.noContent().build();
+    }
+
+
     @GetMapping("/ActiveBrands")
-    public ResponseEntity<?> getAllActiveBrands(@PathVariable("id") Long id){
+    public ResponseEntity<?> getAllActiveBrands(@PathVariable("id") Long id) {
         return ResponseEntity.ok(brandService.getAllActiveBrands());
     }
 
     @GetMapping("/deleted")
-    public ResponseEntity<?> getAllDeletedBrands(){
+    public ResponseEntity<?> getAllDeletedBrands() {
         return ResponseEntity.ok(brandService.getAllDeletedBrands());
     }
 
+
+    @PostMapping("/{id}/logo")
+    public ResponseEntity<?> uploadLogo(@PathVariable Long id,
+                                        @RequestParam("file") MultipartFile file) {
+
+        Brand brand = brandService.uploadLogo(id, file);
+
+        return ResponseEntity.ok(brandMapper.toResponse(brand));
+    }
+
+
+    @DeleteMapping("/{id}/logo")
+    public ResponseEntity<?> deleteLogo(@PathVariable Long id) {
+
+        brandService.deleteLogo(id);
+
+        return ResponseEntity.ok("Successful");
+    }
 
 }

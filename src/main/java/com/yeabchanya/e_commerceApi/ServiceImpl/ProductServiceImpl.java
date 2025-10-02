@@ -21,9 +21,12 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Map;
 
 @Service
 @Slf4j
@@ -35,12 +38,6 @@ public class ProductServiceImpl implements ProductService {
     private final CategoryService categoryService;
     private final ProductMapper productMapper;
     private final ProductServiceUpdate serviceUpdate;
-
-    @Override
-    public Product getProductById(Long id) {
-        return productRepository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("Product", id));
-    }
 
     @Override
     public ProductResponse createProduct(ProductRequest request) {
@@ -55,7 +52,17 @@ public class ProductServiceImpl implements ProductService {
         product.setCategory(category);
         product.setBrand(brand);
 
+        product.setCreatedAt(LocalDateTime.now());
+        product.setActive(true);
+        product.setDeleted(false);
+
         return productMapper.toResponse(productRepository.save(product));
+    }
+
+    @Override
+    public Product getProductById(Long id) {
+        return productRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Product", id));
     }
 
     @Override
@@ -71,6 +78,8 @@ public class ProductServiceImpl implements ProductService {
         // update with command method
         product = serviceUpdate.updateDetails(product, request, brand, category);
 
+        product.setUpdatedAt(LocalDateTime.now());
+
         productRepository.save(product);
 
         return productMapper.toResponse(product);
@@ -81,9 +90,28 @@ public class ProductServiceImpl implements ProductService {
 
         Product product = getProductById(id);
 
+        product.setDeletedAt(LocalDateTime.now());
+
         productRepository.delete(product);
 
         return product;
+    }
+
+    @Override
+    public void softDeleteProduct(Long productId, String deletedBy) {
+
+        Product product = getProductById(productId);
+
+        product.setDeleted(true);
+        product.setActive(false);
+        product.setDeletedBy(deletedBy);
+        product.setDeletedAt(LocalDateTime.now());
+
+    }
+
+    @Override
+    public void restoreProduct(Long productId) {
+
     }
 
     @Override
@@ -129,11 +157,96 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
+    public void adjustStock(Long productId, int quantity) {
+
+    }
+
+    @Override
+    public int getStock(Long productId) {
+        return 0;
+    }
+
+    @Override
+    public void updatePrice(Long productId, double newPrice) {
+
+    }
+
+    @Override
+    public void applyDiscount(Long productId, double percent) {
+
+    }
+
+    @Override
+    public void applyDiscountByBrand(Long brandId, double percent) {
+
+    }
+
+    @Override
+    public void applyDiscountByCategory(Long categoryId, double percent) {
+
+    }
+
+    @Override
+    public ProductResponse uploadMainImage(Long productId, MultipartFile file) {
+        return null;
+    }
+
+    @Override
+    public void uploadGallery(Long productId, List<MultipartFile> files) {
+
+    }
+
+    @Override
+    public void importProductsFromExcel(MultipartFile file) {
+
+    }
+
+    @Override
+    public void exportProductsToExcel(List<Long> productIds) {
+
+    }
+
+    @Override
+    public void exportAllProductsToExcel() {
+
+    }
+
+    @Override
+    public List<ProductResponse> getProductsByBrand(Long brandId) {
+        return null;
+    }
+
+    @Override
+    public List<ProductResponse> getProductsByCategory(Long categoryId) {
+        return null;
+    }
+
+    @Override
+    public List<ProductResponse> getTopSellingProducts(int limit) {
+        return null;
+    }
+
+    @Override
+    public List<ProductResponse> getLowStockProducts(int threshold) {
+        return null;
+    }
+
+    @Override
+    public List<ProductResponse> searchProducts(String keyword) {
+        return null;
+    }
+
+    @Override
     public List<ProductResponse> getAllProducts() {
         return productRepository.findAll()
                 .stream()
                 .map(productMapper::toResponse)
                 .toList();
+    }
+
+    @Override
+    public Page<Product> listAllProductsPagination(Map<String, String> params) {
+        return null;
     }
 
 }
