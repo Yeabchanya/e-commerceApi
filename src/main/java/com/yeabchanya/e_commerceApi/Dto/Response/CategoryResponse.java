@@ -14,6 +14,6 @@ public class CategoryResponse {
 
     private String name;
 
-    private Long productId;
+    private int totalProducts;
 
 }

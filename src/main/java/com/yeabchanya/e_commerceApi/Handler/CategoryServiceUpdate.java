@@ -10,6 +10,7 @@ public class CategoryServiceUpdate {
     public Category updateDetails(Category category, CategoryRequest request) {
 
         category.setName(request.getName());
+        category.setDescription(request.getDescription());
 
         return category;
     }

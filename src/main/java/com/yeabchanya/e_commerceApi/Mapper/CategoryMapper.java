@@ -2,6 +2,7 @@ package com.yeabchanya.e_commerceApi.Mapper;
 
 
 import com.yeabchanya.e_commerceApi.Dto.Request.CategoryRequest;
+import com.yeabchanya.e_commerceApi.Dto.Response.CategoryResponse;
 import com.yeabchanya.e_commerceApi.model.Category;
 import org.mapstruct.Mapper;
 
@@ -12,5 +13,5 @@ public interface CategoryMapper {
     Category toEntity(CategoryRequest request);
 
     //Entity → Response (for returning to API)
-    CategoryRequest toResponse(Category category);
+    CategoryResponse toResponse(Category category);
 }

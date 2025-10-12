@@ -194,7 +194,7 @@ public class BrandServiceImpl implements BrandService {
         Brand brand = getBrandById(id); // throw ResourceNotFoundException if brand not found
 
         if (brand.getLogoUrl() == null) {
-            throw new BadRequestException("Brand with id = " + id + " has no logo to delete");
+            throw new BadRequestException("Brand Logo",id);
         }
 
         String filename = Paths.get(brand.getLogoUrl()).getFileName().toString();
@@ -202,8 +202,7 @@ public class BrandServiceImpl implements BrandService {
         try {
             Files.deleteIfExists(root.resolve(filename));
         } catch (IOException e) {
-            throw new ApiException(HttpStatus.INTERNAL_SERVER_ERROR,
-                    "Could not delete logo file: " + filename);
+            throw new ApiException(HttpStatus.INTERNAL_SERVER_ERROR,"Could not delete logo file: " + filename);
         }
 
         brand.setLogoUrl(null);
