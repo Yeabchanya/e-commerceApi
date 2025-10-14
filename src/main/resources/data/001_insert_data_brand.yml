@@ -1,0 +1,129 @@
+databaseChangeLog:
+  - changeSet:
+      id: 001_init_db_brand
+      author: chanya@gmail.com
+      changes:
+        - createTable:
+            tableName: tb_brand
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+
+              - column:
+                  name: name
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+
+              - column:
+                  name: description
+                  type: VARCHAR(1000)
+
+              - column:
+                  name: active
+                  type: BOOLEAN
+                  defaultValueBoolean: true
+
+              - column:
+                  name: deleted
+                  type: BOOLEAN
+                  defaultValueBoolean: false
+
+              - column:
+                  name: created_at
+                  type: TIMESTAMP
+
+              - column:
+                  name: updated_at
+                  type: TIMESTAMP
+
+              - column:
+                  name: deleted_at
+                  type: TIMESTAMP
+
+              - column:
+                  name: deleted_by
+                  type: VARCHAR(255)
+
+              - column:
+                  name: logo_url
+                  type: VARCHAR(500)
+
+  - changeSet:
+      id: insert-sample-brands
+      author: yourname
+      changes:
+        - insert:
+            tableName: tb_brand
+            columns:
+              - column: { name: name, value: "Nike" }
+              - column: { name: description, value: "Leading sportswear brand known for innovation and performance." }
+              - column: { name: active, valueBoolean: true }
+              - column: { name: deleted, valueBoolean: false }
+              - column: { name: created_at, valueDate: "2025-01-01T10:00:00" }
+              - column: { name: logo_url, value: "/images/brands/nike.png" }
+
+        - insert:
+            tableName: tb_brand
+            columns:
+              - column: { name: name, value: "Adidas" }
+              - column: { name: description, value: "Global brand producing sports apparel and footwear." }
+              - column: { name: active, valueBoolean: true }
+              - column: { name: deleted, valueBoolean: false }
+              - column: { name: created_at, valueDate: "2025-01-02T10:00:00" }
+              - column: { name: logo_url, value: "/images/brands/adidas.png" }
+
+        - insert:
+            tableName: tb_brand
+            columns:
+              - column: { name: name, value: "Puma" }
+              - column: { name: description, value: "German multinational specializing in footwear and sportswear." }
+              - column: { name: active, valueBoolean: true }
+              - column: { name: deleted, valueBoolean: false }
+              - column: { name: created_at, valueDate: "2025-01-03T10:00:00" }
+              - column: { name: logo_url, value: "/images/brands/puma.png" }
+
+        - insert:
+            tableName: tb_brand
+            columns:
+              - column: { name: name, value: "Under Armour" }
+              - column: { name: description, value: "Innovative sports performance clothing brand." }
+              - column: { name: active, valueBoolean: true }
+              - column: { name: deleted, valueBoolean: false }
+              - column: { name: created_at, valueDate: "2025-01-04T10:00:00" }
+              - column: { name: logo_url, value: "/images/brands/underarmour.png" }
+
+        - insert:
+            tableName: tb_brand
+            columns:
+              - column: { name: name, value: "Reebok" }
+              - column: { name: description, value: "Iconic sports brand offering fitness and casual products." }
+              - column: { name: active, valueBoolean: true }
+              - column: { name: deleted, valueBoolean: false }
+              - column: { name: created_at, valueDate: "2025-01-05T10:00:00" }
+              - column: { name: logo_url, value: "/images/brands/reebok.png" }
+
+        - insert:
+            tableName: tb_brand
+            columns:
+              - column: { name: name, value: "New Balance" }
+              - column: { name: description, value: "American sports footwear brand emphasizing comfort and quality." }
+              - column: { name: active, valueBoolean: true }
+              - column: { name: deleted, valueBoolean: false }
+              - column: { name: created_at, valueDate: "2025-01-06T10:00:00" }
+              - column: { name: logo_url, value: "/images/brands/newbalance.png" }
+
+        - insert:
+            tableName: tb_brand
+            columns:
+              - column: { name: name, value: "Asics" }
+              - column: { name: description, value: "Japanese multinational corporation producing running shoes and sports gear." }
+              - column: { name: active, valueBoolean: true }
+              - column: { name: deleted, valueBoolean: false }
+              - column: { name: created_at, valueDate: "2025-01-07T10:00:00" }
+              - column: { name: logo_url, value: "/images/brands/asics.png" }

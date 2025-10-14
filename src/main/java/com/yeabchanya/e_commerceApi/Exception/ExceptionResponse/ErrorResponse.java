@@ -1,8 +1,7 @@
-package com.yeabchanya.e_commerceApi.Exception;
+package com.yeabchanya.e_commerceApi.Exception.ExceptionResponse;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 
 @Data
