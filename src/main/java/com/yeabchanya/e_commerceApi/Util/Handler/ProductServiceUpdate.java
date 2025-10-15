@@ -1,4 +1,4 @@
-package com.yeabchanya.e_commerceApi.Handler;
+package com.yeabchanya.e_commerceApi.Util.Handler;
 
 import com.yeabchanya.e_commerceApi.Dto.Request.ProductRequest;
 import com.yeabchanya.e_commerceApi.Exception.ResourceNotFoundException;

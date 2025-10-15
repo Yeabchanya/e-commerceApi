@@ -3,7 +3,7 @@ package com.yeabchanya.e_commerceApi.ServiceImpl;
 import com.yeabchanya.e_commerceApi.Dto.Request.CategoryRequest;
 import com.yeabchanya.e_commerceApi.Exception.ResourceAlreadyExistsException;
 import com.yeabchanya.e_commerceApi.Exception.ResourceNotFoundException;
-import com.yeabchanya.e_commerceApi.Handler.CategoryServiceUpdate;
+import com.yeabchanya.e_commerceApi.Util.Handler.CategoryServiceUpdate;
 import com.yeabchanya.e_commerceApi.Mapper.CategoryMapper;
 import com.yeabchanya.e_commerceApi.Repository.CategoryRepository;
 import com.yeabchanya.e_commerceApi.Service.CategoryService;

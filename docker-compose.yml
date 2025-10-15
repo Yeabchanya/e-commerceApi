@@ -1,45 +1,30 @@
-
 version: "3.8"
-
 services:
+
   postgres:
-      image: postgres:14
-      environment:
-        - POSTGRES_USER: user-name
-        - POSTGRES_PASSWORD: 123
-        - POSTGRES_DB: strong-password
-      ports:
-        - "5434:5432"
-
-
-
-
-
-
-
-
-    image: postgres
-    container_name: local_pgdb
-    restart: always
-    ports:
-      - "5432:5432"
+    image: postgres:14
     environment:
-      POSTGRES_USER: user-name
-      POSTGRES_PASSWORD: strong-password
-    volumes:
-      - local_pgdata:/var/lib/postgresql/data
-  pgadmin:
-    image: dpage/pgadmin4
-    container_name: pgadmin4_container
-    restart: always
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=123
+      - POSTGRES_DB=e-commerce
+
     ports:
-      - "8888:80"
-    environment:
-      PGADMIN_DEFAULT_EMAIL: user-name@domain-name.com
-      PGADMIN_DEFAULT_PASSWORD: strong-password
+      - "5434:5432"
+
     volumes:
-      - pgadmin-data:/var/lib/pgadmin
+      - data:/var/lib/postgresql/data
+
+  pg-admin:
+    image: dpage/pgadmin4:6
+    environment:
+
+      PGADMIN_DEFAULT_EMAIL: chanya@gmail.com
+      PGADMIN_DEFAULT_PASSWORD: chanya123 # Set a secure password
+      PGADMIN_LISTEN_PORT: 5050
+
+    ports:
+      - "5050:5050"
 
 volumes:
-  local_pgdata:
-  pgadmin-data:
+  data:
+    driver: local

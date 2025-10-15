@@ -3,7 +3,7 @@ package com.yeabchanya.e_commerceApi.ServiceImpl;
 import com.yeabchanya.e_commerceApi.Dto.Request.CustomerRequest;
 import com.yeabchanya.e_commerceApi.Dto.Response.CustomerResponse;
 import com.yeabchanya.e_commerceApi.Exception.ResourceNotFoundException;
-import com.yeabchanya.e_commerceApi.Handler.CustomerServiceUpdate;
+import com.yeabchanya.e_commerceApi.Util.Handler.CustomerServiceUpdate;
 import com.yeabchanya.e_commerceApi.Mapper.CustomerMapper;
 import com.yeabchanya.e_commerceApi.Repository.CustomerRepository;
 import com.yeabchanya.e_commerceApi.Service.CustomerService;

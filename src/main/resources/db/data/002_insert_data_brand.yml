@@ -1,0 +1,61 @@
+databaseChangeLog:
+  - changeSet:
+      id: 003_insert_tb_brand
+      author: chanya@gmail.com
+      changes:
+        - insert:
+            tableName: tb_brand
+            columns:
+              - column: {name: name, value: 'Apple'}
+              - column: {name: description, value: 'Tech giant known for iPhones and MacBooks.'}
+              - column: {name: active, valueBoolean: true}
+              - column: {name: created_at, valueComputed: 'NOW()'}
+              - column: {name: logo_url, value: 'https://example.com/apple_logo.png'}
+        - insert:
+            tableName: tb_brand
+            columns:
+              - column: {name: name, value: 'Samsung'}
+              - column: {name: description, value: 'South Korean multinational electronics company.'}
+              - column: {name: active, valueBoolean: true}
+              - column: {name: created_at, valueComputed: 'NOW()'}
+              - column: {name: logo_url, value: 'https://example.com/samsung_logo.png'}
+        - insert:
+            tableName: tb_brand
+            columns:
+              - column: {name: name, value: 'Sony'}
+              - column: {name: description, value: 'Japanese multinational conglomerate, famous for PlayStation.'}
+              - column: {name: active, valueBoolean: true}
+              - column: {name: created_at, valueComputed: 'NOW()'}
+              - column: {name: logo_url, value: 'https://example.com/sony_logo.png'}
+        - insert:
+            tableName: tb_brand
+            columns:
+              - column: {name: name, value: 'Nike'}
+              - column: {name: description, value: 'American multinational corporation involved in the design and manufacture of footwear and apparel.'}
+              - column: {name: active, valueBoolean: true}
+              - column: {name: created_at, valueComputed: 'NOW()'}
+              - column: {name: logo_url, value: 'https://example.com/nike_logo.png'}
+        - insert:
+            tableName: tb_brand
+            columns:
+              - column: {name: name, value: 'Google'}
+              - column: {name: description, value: 'American multinational technology company specializing in internet-related services and products.'}
+              - column: {name: active, valueBoolean: true}
+              - column: {name: created_at, valueComputed: 'NOW()'}
+              - column: {name: logo_url, value: 'https://example.com/google_logo.png'}
+        - insert:
+            tableName: tb_brand
+            columns:
+              - column: {name: name, value: 'IKEA'}
+              - column: {name: description, value: 'Swedish multinational conglomerate that designs and sells ready-to-assemble furniture.'}
+              - column: {name: active, valueBoolean: true}
+              - column: {name: created_at, valueComputed: 'NOW()'}
+              - column: {name: logo_url, value: 'https://example.com/ikea_logo.png'}
+        - insert:
+            tableName: tb_brand
+            columns:
+              - column: {name: name, value: 'Coca-Cola'}
+              - column: {name: description, value: 'American multinational beverage corporation.'}
+              - column: {name: active, valueBoolean: true}
+              - column: {name: created_at, valueComputed: 'NOW()'}
+              - column: {name: logo_url, value: 'https://example.com/coke_logo.png'}

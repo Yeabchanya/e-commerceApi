@@ -10,9 +10,10 @@ spring:
     hibernate:
       ddl-auto: none
 
-  mvn:
-    path match:
-      matching-strategy: ant_part_matcher
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+
   liquibase:
-        change-log: classpath:db/changelog/db.changelog-master.yaml
-        enabled: true
+    change-log: classpath:db/changelog/db.changelog-master.yaml
+    enabled: true

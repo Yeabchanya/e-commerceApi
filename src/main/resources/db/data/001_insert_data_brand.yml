@@ -1,0 +1,156 @@
+databaseChangeLog:
+  - changeSet:
+      id: 002_insert_tb_brand
+      author: chanya@gmail.com
+      changes:
+        - insert:
+            tableName: tb_brand
+            columns:
+              - column:
+                  name: name
+                  value: "Nike"
+              - column:
+                  name: description
+                  value: "Sportswear and athletic shoes"
+              - column:
+                  name: active
+                  valueBoolean: true
+              - column:
+                  name: deleted
+                  valueBoolean: false
+              - column:
+                  name: created_at
+                  valueDate: "2025-10-14T10:00:00"
+
+        - insert:
+            tableName: tb_brand
+            columns:
+              - column:
+                  name: name
+                  value: "Adidas"
+              - column:
+                  name: description
+                  value: "Sports and lifestyle brand"
+              - column:
+                  name: active
+                  valueBoolean: true
+              - column:
+                  name: deleted
+                  valueBoolean: false
+              - column:
+                  name: created_at
+                  valueDate: "2025-10-14T10:05:00"
+
+        - insert:
+            tableName: tb_brand
+            columns:
+              - column:
+                  name: name
+                  value: "Puma"
+              - column:
+                  name: description
+                  value: "Sport shoes and apparel"
+              - column:
+                  name: active
+                  valueBoolean: true
+              - column:
+                  name: deleted
+                  valueBoolean: false
+              - column:
+                  name: created_at
+                  valueDate: "2025-10-14T10:10:00"
+
+        - insert:
+            tableName: tb_brand
+            columns:
+              - column:
+                  name: name
+                  value: "Reebok"
+              - column:
+                  name: description
+                  value: "Fitness and lifestyle brand"
+              - column:
+                  name: active
+                  valueBoolean: true
+              - column:
+                  name: deleted
+                  valueBoolean: false
+              - column:
+                  name: created_at
+                  valueDate: "2025-10-14T10:15:00"
+
+        - insert:
+            tableName: tb_brand
+            columns:
+              - column:
+                  name: name
+                  value: "Under Armour"
+              - column:
+                  name: description
+                  value: "Athletic performance gear"
+              - column:
+                  name: active
+                  valueBoolean: true
+              - column:
+                  name: deleted
+                  valueBoolean: false
+              - column:
+                  name: created_at
+                  valueDate: "2025-10-14T10:20:00"
+
+        - insert:
+            tableName: tb_brand
+            columns:
+              - column:
+                  name: name
+                  value: "New Balance"
+              - column:
+                  name: description
+                  value: "Shoes and sportswear"
+              - column:
+                  name: active
+                  valueBoolean: true
+              - column:
+                  name: deleted
+                  valueBoolean: false
+              - column:
+                  name: created_at
+                  valueDate: "2025-10-14T10:25:00"
+
+        - insert:
+            tableName: tb_brand
+            columns:
+              - column:
+                  name: name
+                  value: "Asics"
+              - column:
+                  name: description
+                  value: "Running shoes and athletic wear"
+              - column:
+                  name: active
+                  valueBoolean: true
+              - column:
+                  name: deleted
+                  valueBoolean: false
+              - column:
+                  name: created_at
+                  valueDate: "2025-10-14T10:30:00"
+
+        - insert:
+            tableName: tb_brand
+            columns:
+              - column:
+                  name: name
+                  value: "Converse"
+              - column:
+                  name: description
+                  value: "Casual and skate shoes"
+              - column:
+                  name: active
+                  valueBoolean: true
+              - column:
+                  name: deleted
+                  valueBoolean: false
+              - column:
+                  name: created_at
+                  valueDate: "2025-10-14T10:35:00"

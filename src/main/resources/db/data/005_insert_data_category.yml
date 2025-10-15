@@ -1,0 +1,194 @@
+databaseChangeLog:
+  - changeSet:
+      id: 005_insert_tb_category
+      author: chanya@gmail.com
+      changes:
+        - insert:
+            tableName: tb_category
+            columns:
+              - column:
+                  name: name
+                  value: "Running Shoes"
+              - column:
+                  name: description
+                  value: "Shoes designed for jogging and long-distance running."
+              - column:
+                  name: image_url
+                  value: "https://example.com/images/category_running.jpg"
+              - column:
+                  name: active
+                  valueBoolean: true
+              - column:
+                  name: created_at
+                  valueDate: "2025-10-14T09:00:00"
+
+        - insert:
+            tableName: tb_category
+            columns:
+              - column:
+                  name: name
+                  value: "Casual Sneakers"
+              - column:
+                  name: description
+                  value: "Comfortable sneakers for everyday wear."
+              - column:
+                  name: image_url
+                  value: "https://example.com/images/category_casual.jpg"
+              - column:
+                  name: active
+                  valueBoolean: true
+              - column:
+                  name: created_at
+                  valueDate: "2025-10-14T09:05:00"
+
+        - insert:
+            tableName: tb_category
+            columns:
+              - column:
+                  name: name
+                  value: "Training Shoes"
+              - column:
+                  name: description
+                  value: "Versatile shoes ideal for gym and cross-training."
+              - column:
+                  name: image_url
+                  value: "https://example.com/images/category_training.jpg"
+              - column:
+                  name: active
+                  valueBoolean: true
+              - column:
+                  name: created_at
+                  valueDate: "2025-10-14T09:10:00"
+
+        - insert:
+            tableName: tb_category
+            columns:
+              - column:
+                  name: name
+                  value: "Basketball Shoes"
+              - column:
+                  name: description
+                  value: "High-traction shoes designed for basketball courts."
+              - column:
+                  name: image_url
+                  value: "https://example.com/images/category_basketball.jpg"
+              - column:
+                  name: active
+                  valueBoolean: true
+              - column:
+                  name: created_at
+                  valueDate: "2025-10-14T09:15:00"
+
+        - insert:
+            tableName: tb_category
+            columns:
+              - column:
+                  name: name
+                  value: "Lifestyle"
+              - column:
+                  name: description
+                  value: "Fashion-forward sneakers for streetwear and casual outfits."
+              - column:
+                  name: image_url
+                  value: "https://example.com/images/category_lifestyle.jpg"
+              - column:
+                  name: active
+                  valueBoolean: true
+              - column:
+                  name: created_at
+                  valueDate: "2025-10-14T09:20:00"
+
+        - insert:
+            tableName: tb_category
+            columns:
+              - column:
+                  name: name
+                  value: "Sandals"
+              - column:
+                  name: description
+                  value: "Light and breathable footwear for warm weather."
+              - column:
+                  name: image_url
+                  value: "https://example.com/images/category_sandals.jpg"
+              - column:
+                  name: active
+                  valueBoolean: true
+              - column:
+                  name: created_at
+                  valueDate: "2025-10-14T09:25:00"
+
+        - insert:
+            tableName: tb_category
+            columns:
+              - column:
+                  name: name
+                  value: "Hiking Boots"
+              - column:
+                  name: description
+                  value: "Durable boots made for hiking and outdoor adventures."
+              - column:
+                  name: image_url
+                  value: "https://example.com/images/category_hiking.jpg"
+              - column:
+                  name: active
+                  valueBoolean: true
+              - column:
+                  name: created_at
+                  valueDate: "2025-10-14T09:30:00"
+
+        - insert:
+            tableName: tb_category
+            columns:
+              - column:
+                  name: name
+                  value: "Slides"
+              - column:
+                  name: description
+                  value: "Slip-on footwear for casual comfort and post-workout use."
+              - column:
+                  name: image_url
+                  value: "https://example.com/images/category_slides.jpg"
+              - column:
+                  name: active
+                  valueBoolean: true
+              - column:
+                  name: created_at
+                  valueDate: "2025-10-14T09:35:00"
+
+        - insert:
+            tableName: tb_category
+            columns:
+              - column:
+                  name: name
+                  value: "Football Boots"
+              - column:
+                  name: description
+                  value: "Cleated footwear designed for soccer and football play."
+              - column:
+                  name: image_url
+                  value: "https://example.com/images/category_football.jpg"
+              - column:
+                  name: active
+                  valueBoolean: true
+              - column:
+                  name: created_at
+                  valueDate: "2025-10-14T09:40:00"
+
+        - insert:
+            tableName: tb_category
+            columns:
+              - column:
+                  name: name
+                  value: "Running Apparel"
+              - column:
+                  name: description
+                  value: "Lightweight, breathable apparel for runners."
+              - column:
+                  name: image_url
+                  value: "https://example.com/images/category_apparel.jpg"
+              - column:
+                  name: active
+                  valueBoolean: true
+              - column:
+                  name: created_at
+                  valueDate: "2025-10-14T09:45:00"

@@ -26,12 +26,9 @@ public class Customer {
     private LocalDate dateOfBirth;
 
     // One Customer can have many Orders
-    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "customer")
     private List<Order> orders = new ArrayList<>();
 
-    // =============================
-    // Audit Information
-    // =============================
     @CreationTimestamp
     @Column(updatable = false)
     private LocalDateTime createdAt;

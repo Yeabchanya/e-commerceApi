@@ -5,7 +5,7 @@ import com.yeabchanya.e_commerceApi.Dto.Response.BrandResponse;
 import com.yeabchanya.e_commerceApi.Exception.ApiException;
 import com.yeabchanya.e_commerceApi.Exception.BadRequestException;
 import com.yeabchanya.e_commerceApi.Exception.ResourceNotFoundException;
-import com.yeabchanya.e_commerceApi.Handler.BrandServiceUpdate;
+import com.yeabchanya.e_commerceApi.Util.Handler.BrandServiceUpdate;
 import com.yeabchanya.e_commerceApi.Mapper.BrandMapper;
 import com.yeabchanya.e_commerceApi.Mapper.ProductMapper;
 import com.yeabchanya.e_commerceApi.Repository.BrandRepository;

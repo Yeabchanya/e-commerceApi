@@ -1,0 +1,254 @@
+databaseChangeLog:
+  - changeSet:
+      id: 003_insert_tb_product
+      author: chanya@gmail.com
+      changes:
+        - insert:
+            tableName: tb_product
+            columns:
+              - column:
+                  name: name
+                  value: "Nike Air Zoom Pegasus 40"
+              - column:
+                  name: description
+                  value: "Lightweight running shoes with responsive cushioning."
+              - column:
+                  name: price
+                  valueNumeric: 129.99
+              - column:
+                  name: stock
+                  valueNumeric: 120
+              - column:
+                  name: brand_id
+                  valueNumeric: 1
+              - column:
+                  name: category_id
+                  valueNumeric: 1
+              - column:
+                  name: created_at
+                  valueDate: "2025-10-14T10:00:00"
+
+        - insert:
+            tableName: tb_product
+            columns:
+              - column:
+                  name: name
+                  value: "Adidas Ultraboost 23"
+              - column:
+                  name: description
+                  value: "High-performance running shoes for daily training."
+              - column:
+                  name: price
+                  valueNumeric: 149.99
+              - column:
+                  name: stock
+                  valueNumeric: 80
+              - column:
+                  name: brand_id
+                  valueNumeric: 2
+              - column:
+                  name: category_id
+                  valueNumeric: 1
+              - column:
+                  name: created_at
+                  valueDate: "2025-10-14T10:10:00"
+
+        - insert:
+            tableName: tb_product
+            columns:
+              - column:
+                  name: name
+                  value: "Puma Future Rider Retro"
+              - column:
+                  name: description
+                  value: "Retro-inspired lifestyle sneakers."
+              - column:
+                  name: price
+                  valueNumeric: 89.99
+              - column:
+                  name: stock
+                  valueNumeric: 150
+              - column:
+                  name: brand_id
+                  valueNumeric: 3
+              - column:
+                  name: category_id
+                  valueNumeric: 2
+              - column:
+                  name: created_at
+                  valueDate: "2025-10-14T10:20:00"
+
+        - insert:
+            tableName: tb_product
+            columns:
+              - column:
+                  name: name
+                  value: "Reebok Nano X3"
+              - column:
+                  name: description
+                  value: "Cross-training shoes built for strength and flexibility."
+              - column:
+                  name: price
+                  valueNumeric: 119.99
+              - column:
+                  name: stock
+                  valueNumeric: 90
+              - column:
+                  name: brand_id
+                  valueNumeric: 4
+              - column:
+                  name: category_id
+                  valueNumeric: 1
+              - column:
+                  name: created_at
+                  valueDate: "2025-10-14T10:30:00"
+
+        - insert:
+            tableName: tb_product
+            columns:
+              - column:
+                  name: name
+                  value: "Under Armour HOVR Sonic 5"
+              - column:
+                  name: description
+                  value: "Smart running shoes with real-time performance tracking."
+              - column:
+                  name: price
+                  valueNumeric: 139.99
+              - column:
+                  name: stock
+                  valueNumeric: 70
+              - column:
+                  name: brand_id
+                  valueNumeric: 5
+              - column:
+                  name: category_id
+                  valueNumeric: 1
+              - column:
+                  name: created_at
+                  valueDate: "2025-10-14T10:40:00"
+
+        - insert:
+            tableName: tb_product
+            columns:
+              - column:
+                  name: name
+                  value: "New Balance 574 Classic"
+              - column:
+                  name: description
+                  value: "Timeless design combining comfort and durability."
+              - column:
+                  name: price
+                  valueNumeric: 99.99
+              - column:
+                  name: stock
+                  valueNumeric: 110
+              - column:
+                  name: brand_id
+                  valueNumeric: 6
+              - column:
+                  name: category_id
+                  valueNumeric: 2
+              - column:
+                  name: created_at
+                  valueDate: "2025-10-14T10:50:00"
+
+        - insert:
+            tableName: tb_product
+            columns:
+              - column:
+                  name: name
+                  value: "Asics Gel-Kayano 31"
+              - column:
+                  name: description
+                  value: "Stability running shoes designed for long-distance comfort."
+              - column:
+                  name: price
+                  valueNumeric: 159.99
+              - column:
+                  name: stock
+                  valueNumeric: 60
+              - column:
+                  name: brand_id
+                  valueNumeric: 7
+              - column:
+                  name: category_id
+                  valueNumeric: 1
+              - column:
+                  name: created_at
+                  valueDate: "2025-10-14T11:00:00"
+
+        - insert:
+            tableName: tb_product
+            columns:
+              - column:
+                  name: name
+                  value: "Converse Chuck Taylor All Star"
+              - column:
+                  name: description
+                  value: "Iconic canvas sneakers for everyday wear."
+              - column:
+                  name: price
+                  valueNumeric: 69.99
+              - column:
+                  name: stock
+                  valueNumeric: 200
+              - column:
+                  name: brand_id
+                  valueNumeric: 8
+              - column:
+                  name: category_id
+                  valueNumeric: 2
+              - column:
+                  name: created_at
+                  valueDate: "2025-10-14T11:10:00"
+
+        - insert:
+            tableName: tb_product
+            columns:
+              - column:
+                  name: name
+                  value: "Nike Metcon 9"
+              - column:
+                  name: description
+                  value: "Training shoes for weightlifting and HIIT workouts."
+              - column:
+                  name: price
+                  valueNumeric: 139.99
+              - column:
+                  name: stock
+                  valueNumeric: 95
+              - column:
+                  name: brand_id
+                  valueNumeric: 1
+              - column:
+                  name: category_id
+                  valueNumeric: 1
+              - column:
+                  name: created_at
+                  valueDate: "2025-10-14T11:20:00"
+
+        - insert:
+            tableName: tb_product
+            columns:
+              - column:
+                  name: name
+                  value: "Adidas Gazelle Vintage"
+              - column:
+                  name: description
+                  value: "Classic suede sneakers with timeless street style."
+              - column:
+                  name: price
+                  valueNumeric: 89.99
+              - column:
+                  name: stock
+                  valueNumeric: 140
+              - column:
+                  name: brand_id
+                  valueNumeric: 2
+              - column:
+                  name: category_id
+                  valueNumeric: 2
+              - column:
+                  name: created_at
+                  valueDate: "2025-10-14T11:30:00"
