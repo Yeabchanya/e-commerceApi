@@ -1,30 +1,118 @@
 version: "3.8"
+
 services:
 
+  # 🐘 PostgreSQL Database
   postgres:
     image: postgres:14
+    container_name: postgres-db
+    restart: always
     environment:
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=123
-      - POSTGRES_DB=e-commerce
-
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 123
+      POSTGRES_DB: e-commerce
+      PGDATA: /var/lib/postgresql/data/pgdata
     ports:
       - "5434:5432"
-
     volumes:
+      # Persistent volume to store database data locally
       - data:/var/lib/postgresql/data
+      # Optional: Mount SQL or Liquibase files if you want auto-seeding
+      # - ./src/main/resources/db/changelog:/docker-entrypoint-initdb.d
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - ecommerce-network
 
+  # 🧭 pgAdmin 4 - Web UI for PostgreSQL
   pg-admin:
     image: dpage/pgadmin4:6
+    container_name: pgadmin
+    restart: always
+    depends_on:
+      postgres:
+        condition: service_healthy
     environment:
-
       PGADMIN_DEFAULT_EMAIL: chanya@gmail.com
-      PGADMIN_DEFAULT_PASSWORD: chanya123 # Set a secure password
+      PGADMIN_DEFAULT_PASSWORD: chanya123
       PGADMIN_LISTEN_PORT: 5050
-
     ports:
       - "5050:5050"
+    volumes:
+      # Store pgAdmin settings (optional)
+      - pgadmin_data:/var/lib/pgadmin
+    networks:
+      - ecommerce-network
 
+  # ☕ Spring Boot Application (Optional Section)
+  # Uncomment this block if you want your backend to start with Docker too
+  #
+  # app:
+  #   build: .
+  #   container_name: ecommerce-api
+  #   restart: always
+  #   depends_on:
+  #     postgres:
+  #       condition: service_healthy
+  #   environment:
+  #     SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/e-commerce
+  #     SPRING_DATASOURCE_USERNAME: postgres
+  #     SPRING_DATASOURCE_PASSWORD: 123
+  #     SPRING_PROFILES_ACTIVE: dev
+  #   ports:
+  #     - "8080:8080"
+  #   networks:
+  #     - ecommerce-network
+
+# 🗂️ Volumes - to persist data between container restarts
 volumes:
   data:
     driver: local
+  pgadmin_data:
+    driver: local
+
+# 🌐 Custom network for inter-service communication
+networks:
+  ecommerce-network:
+    driver: bridge
+
+
+
+
+# first
+
+#
+#version: "3.8"
+#services:
+#
+#  postgres:
+#    image: postgres:14
+#    environment:
+#      - POSTGRES_USER=postgres
+#      - POSTGRES_PASSWORD=123
+#      - POSTGRES_DB=e-commerce
+#
+#    ports:
+#      - "5434:5432"
+#
+#    volumes:
+#      - data:/var/lib/postgresql/data
+#
+#  pg-admin:
+#    image: dpage/pgadmin4:6
+#    environment:
+#
+#      PGADMIN_DEFAULT_EMAIL: chanya@gmail.com
+#      PGADMIN_DEFAULT_PASSWORD: chanya123 # Set a secure password
+#      PGADMIN_LISTEN_PORT: 5050
+#
+#    ports:
+#      - "5050:5050"
+#
+#volumes:
+#  data:
+#    driver: local
+#
